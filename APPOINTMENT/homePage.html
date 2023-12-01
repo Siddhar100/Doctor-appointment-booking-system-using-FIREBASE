@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Clinic</title>
+    <link rel="stylesheet" href="homePageCss.css">
+</head>
+<body>
+    
+    <div class="center">
+        <h1>Login</h1>
+        <div id="sender">
+        <form method="post" >
+          <div class="txt_field">
+            <input type="text" id="phoneNumber">
+            <div id="recaptcha-container"></div>
+            <span></span>
+            <label>Enter Phone Number</label>
+          </div>
+          
+          <input type="button" value="Login" onclick="phoneAuth();">
+          
+        </form>
+      </div>
+          
+        <div style="display:none" id="verifier">
+          <form method="post">
+            <div class="txt_field"  >
+              <input type="text"  id="code">
+              <span></span>
+              <label>Enter OTP</label>
+            </div>
+            <input type="button" value="Login" onclick="codeverify();">
+            
+          </form>
+        </div>
+         
+        <div class="signup_link">
+            Not a member? <a href="./registrationForm.html">Signup</a>
+          </div>
+      </div>
+      <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+
+      <Script>
+        var firebaseConfig = {
+      apiKey: "AIzaSyBPUYyf2JXFTB81tw6FwKAtjq09QJEcy3E",
+      authDomain: "appoinment-9ef3f.firebaseapp.com",
+      projectId: "appoinment-9ef3f",
+      storageBucket: "appoinment-9ef3f.appspot.com",
+      messagingSenderId: "616878692088",
+      appId: "1:616878692088:web:247bddf3469891eb0ccd0d",
+      measurementId: "G-K6CRDQ6DCP"
+    };
+    
+    firebase.initializeApp(firebaseConfig);
+      </Script>
+    
+      <script src="./login.js"></script>
+    
+</body>
+</html>

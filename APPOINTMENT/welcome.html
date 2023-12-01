@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP PAGE</title>
+    <link rel="stylesheet" href="homePageCss.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        body {
+            font-family: 'poppins', sans-serif;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 70px 0;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .menu,
+        .content {
+            width: 100%;
+        }
+
+        select {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'poppins', sans-serif;
+            border: none;
+            border-radius: 8px;
+            border: 2px solid #3f51b5;
+            box-shadow: 0 15px 15px #efefef;
+            appearance: none;
+            background-position: 95% 55%;
+            background-size: 23px;
+        }
+
+        .content {
+            margin: 0px 0;
+        }
+
+        .content .data {
+            padding: 2px;
+            background-color: #fff;
+            border: 2px solid #8bc34a;
+            border-radius: 8px;
+        }
+
+        .content p {
+            margin-bottom: 10px;
+            padding-bottom: 3px;
+            border-bottom: 0px solid;
+        }
+
+        .data {
+            display: none;
+        }
+
+
+        .button {
+  background-color: #3f51b5;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 135px;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+    </style>
+
+
+
+</head>
+
+<body>
+    
+    
+
+    <div class="center">
+        <h1 style="color: #3f51b5;">APPOINMENT</h1>
+        <button class="button button5" onclick="logout();">LOGOUT</button>
+
+        <form method="post">
+
+            <div class="wrapper">
+                <div class="menu">
+                   
+                    <div class="txt_field">
+                        <h4 align="center" style="color: #3f51b5;">Doctor Name</h4>
+                        <select id="name" style="margin-right: 50px;width: 326px; height: 50px;">
+                            
+                            <option value="subir_vattraya">Dr. Subir Vattraya</option>
+                            <option value="samal_kumar_das">Dr. Samal kumar Das</option>
+                            <option value="arundhati_bag" >Dr.Arundhati Bag</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div id="arundhati_bag" class="data">
+                        <p><b>DR.NAME : Dr.Arundhati Bag</b></p>
+                        <p><b>DEGREE : BDS</b></p>
+                        <p><b>FEES : 150</b></p>
+                    </div>
+                    <div id="subir_vattraya" class="data">
+                        <p><b>DR.NAME : Dr.Subbir vattraya</b></p>
+                        <p><b>DEGREE : BDS</b></p>
+                        <p><b>FEES : 200</b></p>
+                    </div>
+                    <div id="samal_kumar_das" class="data">
+                        <p><b>DR.NAME : Dr.samal kumar das</b></p>
+                        <p><b>DEGREE : BDS</b></p>
+                        <p><b>FEES : 250</b></p>
+                    </div>
+
+
+                    <br>
+
+                    <input type="button" value="submit" onclick="data();">
+
+        </form>
+    </div>
+
+    <br>
+    </div>
+    <div class="signup_link">
+
+    </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+
+    <Script>
+        
+     const firebaseConfig = {
+    apiKey: "AIzaSyBPUYyf2JXFTB81tw6FwKAtjq09QJEcy3E",
+    authDomain: "appoinment-9ef3f.firebaseapp.com",
+    databaseURL: "https://appoinment-9ef3f-default-rtdb.firebaseio.com",
+    projectId: "appoinment-9ef3f",
+    storageBucket: "appoinment-9ef3f.appspot.com",
+    messagingSenderId: "616878692088",
+    appId: "1:616878692088:web:247bddf3469891eb0ccd0d",
+    measurementId: "G-K6CRDQ6DCP"
+    };
+    
+    firebase.initializeApp(firebaseConfig);
+    
+    </Script>
+    
+   <script src="./submitform.js"></script>
+    <script src="./appoinmentsub.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"
+        integrity="sha512-8Z5++K1rB3U+USaLKG6oO8uWWBhdYsM3hmdirnOEWp8h2B1aOikj5zBzlXs8QOrvY9OxEnD2QDkbSKKpfqcIWw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $("#name").on('change', function () {
+                $(".data").hide();
+                $("#" + $(this).val()).fadeIn(700);
+            }).change();
+        });
+    </script>
+
+
+
+</body>
+
+</html>

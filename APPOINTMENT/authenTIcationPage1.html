@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP PAGE</title>
+  <link rel="stylesheet" href="homePageCss.css">
+
+</head>
+
+<body>
+
+  <div class="center">
+    <h1>Sign Up</h1>
+    <div id="sender">
+    <form method="post">
+      <div class="txt_field">
+        <input type="text" id="number">
+        <div id="recaptcha-container"></div>
+        <span></span>
+        <label>Phone Number</label>
+      </div>
+      <input type="button" value="send code" onclick="phoneAuth();">
+    </form>
+  </div>
+
+  <div id="recciver" style="display: none">
+    <form method="post">
+      <div class="txt_field">
+        <input type="text" id="verificationcode">
+        <span></span>
+        <label>Enter OTP</label>
+      </div>
+
+      <input type="button" value="Submit" onclick="codeverify();">
+
+    </form>
+  </div>
+    <div class="signup_link">
+
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+
+  <Script>
+   const firebaseConfig = {
+  apiKey: "AIzaSyBPUYyf2JXFTB81tw6FwKAtjq09QJEcy3E",
+  authDomain: "appoinment-9ef3f.firebaseapp.com",
+  databaseURL: "https://appoinment-9ef3f-default-rtdb.firebaseio.com",
+  projectId: "appoinment-9ef3f",
+  storageBucket: "appoinment-9ef3f.appspot.com",
+  messagingSenderId: "616878692088",
+  appId: "1:616878692088:web:247bddf3469891eb0ccd0d",
+  measurementId: "G-K6CRDQ6DCP"
+};
+
+firebase.initializeApp(firebaseConfig);
+  </Script>
+
+  <script src="./auth.js"></script>
+
+
+
+</body>
+
+</html>
